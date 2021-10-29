@@ -4,7 +4,7 @@ export default function ApiRequest(props) {
 
     useEffect(() => {
         fetchData()
-    }, [])
+    })
 
    async function fetchData() {
        try{
