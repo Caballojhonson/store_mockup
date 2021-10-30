@@ -6,7 +6,7 @@ export default function Product(props) {
 
     function handleChange(e) {
         e.preventDefault();
-        setQuantity(e.target.value)
+        setQuantity(parseInt(e.target.value))
     }
 
     const add = () => setQuantity(prev => prev + 1)
@@ -25,7 +25,7 @@ export default function Product(props) {
 						<input type="number" onChange={handleChange} value={quantity}/>
 						<button className=" btn btn-outline-secondary" onClick={add}>+</button>
 					</div>
-					<Button className="product__cart__button btn btn-dark">Add to cart</Button>
+					<Button className="product__cart__button btn btn-dark" onClick={() => props.callback(props.id, quantity)}>Add to cart</Button>
 				</div>
 			</div>
 		</div>

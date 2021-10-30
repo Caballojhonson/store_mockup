@@ -1,10 +1,15 @@
-import React from 'react'
+import React, {useState} from 'react'
 import "../../node_modules/bootstrap-icons/font/bootstrap-icons.css"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import { Container } from 'react-bootstrap'
+import CartOverview from './CartOverview'
 
-export default function Header() {
+export default function Header(props) {
+    const [cartIsHidden, setCartIsHidden] = useState(true)
+
+    const toggleHidden = () => setCartIsHidden(prev => !prev)
+
     return (
         <Navbar className="navbar" bg="light" variant="light" sticky="top" >
             <Navbar.Brand>  
@@ -17,10 +22,10 @@ export default function Header() {
                 </Nav>
             </Container>
             <Container>
-            <i className="navbar__cart bi bi-cart">
-            <div className="navbar__cartnum">3</div>
-            </i>
-            
+                <i className="navbar__cart bi bi-cart" onClick={toggleHidden}>
+                {props.totalItems ? <div className="navbar__cartnum">{props.totalItems}</div> : null}
+                </i>
+                {cartIsHidden ? null : <CartOverview cartItems={props.cartItems} />}
             </Container>
         </Navbar>
     )
