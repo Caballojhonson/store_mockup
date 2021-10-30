@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ApiRequest from '../Components/ApiRequest';
+import Header from '../Components/Header';
 
 import Product from '../Components/Product';
 
@@ -16,13 +17,14 @@ export default function Store() {
 				title={item.title}
 				image={item.image}
 				description={item.description}
-                price={item.price + '$'}
+				price={item.price + '$'}
 			/>
 		);
 	});
 
 	return (
 		<div>
+			<Header />
 			<ApiRequest passData={apiCall} />
 			<div className="store__product__container">{products}</div>
 		</div>

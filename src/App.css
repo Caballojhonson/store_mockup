@@ -96,3 +96,33 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.navbar__logo {
+    font-size: 40px;
+    margin-left: 2rem;
+}
+
+.navbar__cart {
+    font-size: 30px;
+    margin-right: 2rem;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.navbar__cartnum {
+    position: relative;
+    bottom: 2.5rem;
+    left: 1.1rem;
+    font-size: 10px;
+    font-weight: bolder;
+    background-color: rgb(255, 58, 58);
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+}
+
+.navbar__navlinks {
+    display: flex;
+    justify-content: center;
+}
