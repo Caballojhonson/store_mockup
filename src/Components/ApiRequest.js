@@ -8,13 +8,14 @@ export default function ApiRequest(props) {
             try{
              fetch('https://fakestoreapi.com/products/', {})
                      .then(res=>res.json())
-                     .then(json=>props.passData(json)) 
+                     .then(json=>props.passData(json))
+                     .then(() => console.log('Done!'))
          }catch(error) {
              throw new Error(error)
          }}
      
         fetchData()
-        console.log('fetching!')
+        console.log('fetching...')
     },[])
 
     return (

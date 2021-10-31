@@ -25,7 +25,13 @@ export default function Header(props) {
                 <i className="navbar__cart bi bi-cart" onClick={toggleHidden}>
                 {props.totalItems ? <div className="navbar__cartnum">{props.totalItems}</div> : null}
                 </i>
-                {cartIsHidden ? null : <CartOverview cartItems={props.cartItems} />}
+                {cartIsHidden ? null :
+                 <CartOverview 
+                 cartItems={props.cartItems}
+                 totalPrice={props.totalPrice}
+                 totalItems={props.totalItems}
+                 removeItem={props.removeItem}
+                />}
             </Container>
         </Navbar>
     )
