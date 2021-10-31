@@ -29,8 +29,10 @@ export default function CartOverview(props) {
             <div className="overview__footer">
             <hr className="overview__hr"></hr>
                 <h5>Total:</h5>
-                <h6>{props.totalItems}</h6>
-                <h6>{`${props.totalPrice.toFixed(2)}$`}</h6>
+                <h4 className="overview__totalPrice">{`${props.totalPrice.toFixed(2)}$`}</h4>
+            </div>
+            <div className="overview__checkout__container justify-content-center">
+                <button className="btn btn-dark btn-lg">Checkout</button>
             </div>
             
         </div>

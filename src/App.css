@@ -123,6 +123,7 @@ input[type='number'] {
 .navbar__navlinks {
 	display: flex;
 	justify-content: center;
+    margin-left: 5rem;
 }
 
 .overview__container {
@@ -163,6 +164,16 @@ input[type='number'] {
 
 .overview__footer>h5 {
     text-align: center;
+}
+
+.overview__checkout__container{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.overview__totalPrice {
+    grid-column: 2 / span 3;
 }
 
 /* OVERVIEW SCROLLBAR */

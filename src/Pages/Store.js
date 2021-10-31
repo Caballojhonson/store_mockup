@@ -16,7 +16,14 @@ export default function Store() {
 
 	const getCartItems = (id, quantity) => {
 		const product = apiData.filter((item) => item.id === id);
+		const matching = cartItems.find((item) => item.title === product[0].title)
 
+		if (matching) {
+			matching.quantity = matching.quantity + quantity;
+			sumTotalPrice()
+			sumTotalItems()
+		} 
+		else {
 		const cartItem = {
 			id: uniqid(),
 			title: product[0].title,
@@ -26,8 +33,8 @@ export default function Store() {
 
 		if(cartItem.quantity > 0) {
 			setCartItems((prevState) => prevState.concat(cartItem));
-			sumTotalItems()
 		}
+	}
 	};
 
 	const sumTotalItems = () => {
@@ -50,7 +57,7 @@ export default function Store() {
 	}, [cartItems])
 
 	const removeItem = (id) => {
-		setCartItems(prev => cartItems.filter(item => item.id !== id))
+		setCartItems(cartItems.filter(item => item.id !== id))
 	}
 
 	const products = apiData.map((item) => {
