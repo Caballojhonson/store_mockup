@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useLocalStorage } from '../useLocalStorage';
 import ApiRequest from '../Components/ApiRequest';
 import Header from '../Components/Header';
 import Product from '../Components/Product';
 import uniqid from 'uniqid'
 
 export default function Store() {
-	const [apiData, setApiData] = useState([]);
-	const [cartItems, setCartItems] = useState([]);
-	const [cartCount, setCartCount] = useState(null);
-	const [totalPrice, setTotalPrice] = useState(0);
+
+	const [apiData, setApiData] = useLocalStorage('apiData',[]);
+	const [cartItems, setCartItems] = useLocalStorage('cartItems',[]);
+	const [cartCount, setCartCount] = useLocalStorage('cartCount',null);
+	const [totalPrice, setTotalPrice] = useLocalStorage('totalPrice',0);
 
 	const apiCall = (data) => {
 		setApiData(data);

@@ -21,6 +21,7 @@ export default function Header(props) {
                     <Nav.Link href="/store">Store</Nav.Link>
                 </Nav>
             </Container>
+            {props.isHomepage ? null : 
             <Container>
                 <i className="navbar__cart bi bi-cart" onClick={toggleHidden}>
                 {props.totalItems ? <div className="navbar__cartnum">{props.totalItems}</div> : null}
@@ -33,6 +34,7 @@ export default function Header(props) {
                  removeItem={props.removeItem}
                 />}
             </Container>
+}
         </Navbar>
     )
 }

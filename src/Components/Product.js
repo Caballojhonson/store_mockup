@@ -17,7 +17,7 @@ export default function Product(props) {
 			<img className="product__image" src={props.image} alt="" />
 			<div className="product__main">
 				<h1 className="product__name">{props.title}</h1>
-				<p>{props.description}</p>
+				<p className="product__description">{props.description}</p>
                 <ul className="product__price">{props.price}</ul>
 				<div className="product__footer flex-row">
 					<div className="product__quantity__container input-group">
