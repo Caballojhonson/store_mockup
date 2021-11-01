@@ -6,7 +6,7 @@ import Store from './Pages/Store';
 
 export default function Routes() {
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/store_mockup">
 			<Switch>
 				<Route exact path="/" component={Homepage} />
                 <Route exact path="/app" component={App} />
