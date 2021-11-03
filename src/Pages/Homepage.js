@@ -8,7 +8,7 @@ export default function Homepage() {
             <div className="homepage__content">
                 <i className="bi bi-tropical-storm homepage__logo"></i>
                 <h1 className="homepage__title">We sell stuff!</h1>
-                <a className="btn btn-dark btn-lg" href="/store">Go buy stuff!</a>
+                <a className="btn btn-dark btn-lg" href="/store_mockup/#/store">Go buy stuff!</a>
             </div>
         </div>
     )
